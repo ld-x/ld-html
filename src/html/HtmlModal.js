@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import {editorStateToHtml} from 'last-draft'
 
 export default class HtmlModal extends Component {
   constructor (props) {
@@ -19,7 +18,7 @@ export default class HtmlModal extends Component {
 
   setCodeFromState() {
     const {editorState, onChange} = this.props
-    const html = editorStateToHtml(editorState)
+    const html = this.props.returnStateAsHtml()
     this.setState({ code: html })
     ReactDOM.findDOMNode(this.refs.textArea).focus()
   }
