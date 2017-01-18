@@ -1,6 +1,6 @@
 {
   "name": "ld-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Last Draft edit html plugin",
   "main": "lib/index.js",
   "scripts": {
