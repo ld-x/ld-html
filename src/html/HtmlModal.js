@@ -45,16 +45,18 @@ export default class HtmlModal extends Component {
 
     return (
       <Wrapper style={{ width: `700px`, left: `-200px` }}>
-        <EditTextArea
-          className='ld-edit-code-textarea'
-          ref='textArea'
-          onChange={::this.onEditChange}
-          value={code}
-          onKeyDown={::this.onKeyDown} />
+        <EditColumn className='ld-edit-html-wrapper'>
+          <EditTextArea
+            className='ld-edit-html-textarea'
+            ref='textArea'
+            onChange={::this.onEditChange}
+            value={code}
+            onKeyDown={::this.onKeyDown} />
+        </EditColumn>
 
-        <EditButtonWrapper className='ld-edit-code-button-wrapper'>
+        <EditActionsColumn className='ld-edit-actions-wrapper'>
           <EditButton
-            className='ld-edit-code-submit-button'
+            className='ld-edit-html-submit-button'
             onClick={::this.submitHtml}
             type='button'
           >
@@ -65,7 +67,7 @@ export default class HtmlModal extends Component {
           </EditButton>
 
           <EditButton
-            className='ld-edit-code-close-button'
+            className='ld-edit-html-close-button'
             onClick={this.props.closeModal}
             type='button'
           >
@@ -76,35 +78,41 @@ export default class HtmlModal extends Component {
             </g>
           </svg>
           </EditButton>
-        </EditButtonWrapper>
+        </EditActionsColumn>
       </Wrapper>
     )
   }
 }
 
 const Wrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  white-space: nowrap;
-  top: -60px;
-  background-color: #fff;
-  box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.3);
-  z-index: 100;
+  display: flex;
+  width: 500px;
+`
+
+const EditColumn = styled.div`
+  flex: 0 0 90%;
+  margin: 0.5rem;
+  padding: 1rem;
+`
+
+const EditActionsColumn = styled.div`
+  flex: 0 0 5%;
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
 `
 
 const EditTextArea = styled.textarea`
-  background-color: transparent;
   border: 1px solid #eee;
-  border-radius: 2px;
   color: #181818 !important;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.2;
-  margin: 1em;
-  padding: 8px;
-  width: 80% !important;
-  height: 150px !important;
+  height: 140px !important;
   resize: none;
   vertical-align: bottom;
+  width: 100%;
+  background: transparent;
+  padding: 0.5rem;
 
   &:hover {
     border: 1px solid #ccc;
@@ -120,17 +128,10 @@ const EditButton = styled.button`
   padding: 0;
   cursor: pointer;
   border: 0;
-  height: 40px;
-  width: 40px;
   background: transparent;
-  padding-right: 16px;
   color: #ccc;
 
   &:hover {
     color: #9d1d20;
   }
-`
-
-const EditButtonWrapper = styled.span`
-  display: inline-block;
 `

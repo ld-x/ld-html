@@ -2,7 +2,7 @@
   "name": "ld-html",
   "version": "1.0.3",
   "description": "Last Draft edit html plugin",
-  "main": "lib/index.js",
+  "main": "lib/html/plugin.js",
   "scripts": {
     "build": "rm -rf lib && babel src --out-dir lib --copy-files"
   },
