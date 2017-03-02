@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vacenz/ld-html"
+    "url": "https://github.com/steveniseki/ld-html"
   },
   "author": "Steven Iseki <stevenisekimartin@gmail.com>",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "webpack": "2.1.0-beta.27"
   },
   "dependencies": {
-    "draft-js": "^0.9.1",
+    "draft-js": "0.10.0",
     "styled-components": "^1.2.1"
   },
   "keywords": [
