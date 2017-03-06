@@ -36,5 +36,23 @@ export default class ExampleEditor extends Component {
     )
   }
 }
+```
 
+## Styles
+
+Last Draft plugins use styled-components 💅 for the base styling.
+
+## Custom Styles with CSS
+
+You can also add custom css to override the base styling with the following class names specified below:
+
+```css
+.ld-html-edit-wrapper {}
+.ld-edit-html-column {}
+.ld-edit-html-textarea {}
+.ld-edit-html-actions-wrapper {}
+.ld-edit-html-submit-button {}
+.ld-edit-html-close-button {}
+.ld-edit-html-button-close {}
+.ld-button-html-edit {}
 ```

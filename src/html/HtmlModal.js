@@ -44,9 +44,9 @@ export default class HtmlModal extends Component {
     const {code} = this.state
 
     return (
-      <Wrapper>
+      <Wrapper className='ld-html-edit-wrapper'>
         <HtmlEdit>
-          <EditColumn className='ld-edit-html-wrapper'>
+          <EditColumn className='ld-edit-html-column'>
             <EditTextArea
               className='ld-edit-html-textarea'
               ref='textArea'
@@ -55,7 +55,7 @@ export default class HtmlModal extends Component {
               onKeyDown={::this.onKeyDown} />
           </EditColumn>
 
-          <EditActionsColumn className='ld-edit-actions-wrapper'>
+          <EditActionsColumn className='ld-edit-html-actions-wrapper'>
             <EditButton
               className='ld-edit-html-submit-button'
               onClick={::this.submitHtml}
@@ -72,7 +72,7 @@ export default class HtmlModal extends Component {
               onClick={this.props.closeModal}
               type='button'
             >
-            <svg width='24' height='24' viewBox='0 0 24 24' className='ld-button-close'>
+            <svg width='24' height='24' viewBox='0 0 24 24' className='ld-edit-html-button-close'>
               <g fill='currentColor' fillRule='evenodd'>
                 <path d='M16.95 5.636l1.414 1.414L7.05 18.364 5.636 16.95z' />
                 <path d='M16.95 18.364l1.414-1.414L7.05 5.636 5.636 7.05z' />
@@ -92,7 +92,6 @@ const Wrapper = styled.div`
   width: 700px;
   display: flex;
 `
-
 
 const HtmlEdit = styled.div`
   position: absolute;
